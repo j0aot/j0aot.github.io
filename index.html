@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Portfólio profissional de desenvolvimento web" />
+		<meta name="keywords" content="desenvolvedor web, front-end, back-end, portfolio" />
+		<title>Portfólio | João Tavares</title>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<h1>João Tavares</h1>
+				<ul>
+					<li><a href="#home">Início</a></li>
+					<li><a href="#about">Sobre</a></li>
+					<li><a href="#projects">Projetos</a></li>
+					<li><a href="#contact">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section id="home" class="hero">
+			<h2>Olá, o meu nome é <span>João Tavares</span></h2>
+			<p>Desenvolvedor Web | Front-end & Back-end</p>
+			<div class="hero-buttons">
+				<a href="#projects" class="btn">Ver Projetos</a>
+				<a href="#contact" class="btn btn-outline">Contacto</a>
+			</div>
+		</section>
+
+		<section id="about">
+			<h2>Sobre Mim</h2>
+			<div class="about-content">
+				<img src="./assets/profile.jpg" alt="Foto de perfil" class="profile-img" />
+				<div class="about-text">
+					<p>Sou desenvolvedor web com experiência em HTML, CSS, JavaScript, React e Node.js, mySQL. Apaixonado por criar soluções digitais eficientes e inovadoras.</p>
+					<div class="skills">
+						<span class="skill-tag">HTML</span>
+						<span class="skill-tag">CSS</span>
+						<span class="skill-tag">JavaScript</span>
+						<span class="skill-tag">React</span>
+						<span class="skill-tag">Node.js</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects">
+			<h2>Projetos</h2>
+			<div class="projects-grid">
+				<div class="card">
+					<img src="./assets/projeto1.jpg" alt="Projeto 1" />
+					<h3>Projeto 1</h3>
+					<p>Descrição detalhada do projeto. Tecnologias utilizadas e principais desafios superados.</p>
+					<div class="card-links">
+						<a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+						<a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+					</div>
+				</div>
+				<!-- Repita para outros projetos -->
+			</div>
+		</section>
+
+		<section id="contact">
+			<h2>Contato</h2>
+			<div class="contact-container">
+				<div class="contact-info">
+					<h3>Vamos conversar?</h3>
+					<p>Entre em contato através do formulário ou das redes sociais.</p>
+					<div class="social-links">
+						<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-github"></i></a>
+						<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+					</div>
+				</div>
+				<form id="contactForm">
+					<input type="text" name="name" placeholder="Seu nome" required />
+					<input type="email" name="email" placeholder="Seu e-mail" required />
+					<textarea name="message" placeholder="Sua mensagem" required></textarea>
+					<button type="submit">Enviar mensagem</button>
+					<p id="formMsg"></p>
+				</form>
+			</div>
+		</section>
+
+		<footer>
+			<div class="footer-content">
+				<div class="social-links">
+					<a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-github"></i></a>
+					<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+				</div>
+				<p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+			</div>
+		</footer>
+		<script src="./scripts/script.js"></script>
+	</body>
+</html>
