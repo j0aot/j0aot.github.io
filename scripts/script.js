@@ -2,13 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Smooth scroll for navigation links
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
 			const targetId = this.getAttribute('href');
 			const targetElement = document.querySelector(targetId);
 			if (targetElement) {
-				targetElement.scrollIntoView({
-					behavior: 'smooth',
-				});
+				e.preventDefault();
+				targetElement.scrollIntoView({ behavior: 'smooth' });
 			}
 		});
 	});
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.disabled = true;
 			button.textContent = 'Sending...';
 
-			// Simulate form submission
 			setTimeout(() => {
 				if (formMsg) {
 					formMsg.textContent = 'Message sent! Thank you for your contact.';
@@ -35,11 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				button.disabled = false;
 				button.textContent = originalButtonText;
 
-				// Clear message after a few seconds
 				setTimeout(() => {
-					if (formMsg) {
-						formMsg.textContent = '';
-					}
+					if (formMsg) formMsg.textContent = '';
 				}, 5000);
 			}, 1500);
 		});
@@ -54,14 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('show');
 					observer.unobserve(entry.target);
-				} else {
-					entry.target.classList.remove('show');
 				}
 			});
 		},
-		{
-			threshold: 0.1,
-		},
+		{ threshold: 0.1 },
 	);
 
 	revealElements.forEach(el => {
@@ -74,19 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function changeNavOnScroll() {
 		let currentSection = '';
+		const headerHeight = 70;
+		const scrollPosition = window.scrollY || window.pageYOffset;
+
 		sections.forEach(section => {
 			const sectionTop = section.offsetTop;
 			const sectionHeight = section.clientHeight;
-			if (pageYOffset >= sectionTop - sectionHeight / 3) {
+			if (scrollPosition >= sectionTop - headerHeight - sectionHeight / 3) {
 				currentSection = section.getAttribute('id');
 			}
 		});
 
 		navLinks.forEach(link => {
-			link.classList.remove('active');
-			if (link.getAttribute('href').substring(1) === currentSection) {
-				link.classList.add('active');
-			}
+			link.classList.toggle('active', link.getAttribute('href').substring(1) === currentSection);
 		});
 	}
 

@@ -646,7 +646,10 @@ nav a.active::after {
 		color: var(--text-muted-color);
 		font-size: 1.5rem;
 		transition: color var(--transition-fast), transform var(--transition-fast);
+		font-size: medium;
 	}
+
+
 
 	.contact-info .social-links a:hover {
 		color: var(--primary-color);
