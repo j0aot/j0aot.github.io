@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			setTimeout(() => {
 				if (formMsg) {
 					formMsg.textContent = 'Message sent! Thank you for your contact.';
-					formMsg.style.color = 'var(--primary-color)'; // Or a success color like green
+					formMsg.style.color = 'var(--primary-color)';
 				}
 				this.reset();
 				button.disabled = false;
@@ -53,68 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('show');
-					// Optional: unobserve after revealing to save resources
-					// observer.unobserve(entry.target);
+					observer.unobserve(entry.target);
 				} else {
-					// Optional: remove 'show' to re-animate if scrolling up
-					// entry.target.classList.remove('show');
+					entry.target.classList.remove('show');
 				}
 			});
 		},
 		{
-			threshold: 0.1, // Trigger when 10% of the element is visible
-			// rootMargin: "0px 0px -50px 0px" // Optional: adjust trigger point
+			threshold: 0.1,
 		},
 	);
 
 	revealElements.forEach(el => {
 		revealObserver.observe(el);
 	});
-
-	// Swiper Carousel Initialization
-	if (typeof Swiper !== 'undefined') {
-		const projectCarousel = new Swiper('.project-carousel', {
-			// Optional parameters
-			loop: true,
-			slidesPerView: 1,
-			spaceBetween: 30,
-			grabCursor: true,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
-			},
-			breakpoints: {
-				// when window width is >= 768px
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 30,
-				},
-				// when window width is >= 1024px
-				1024: {
-					slidesPerView: 3,
-					spaceBetween: 40,
-				},
-			},
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			effect: 'coverflow', // Example effect, can be 'slide', 'fade', 'cube', 'flip'
-			coverflowEffect: {
-				rotate: 30,
-				stretch: 0,
-				depth: 100,
-				modifier: 1,
-				slideShadows: true,
-			},
-		});
-	} else {
-		console.warn('Swiper library not found. Carousel will not be initialized.');
-	}
 
 	// Active navigation link highlighting on scroll
 	const sections = document.querySelectorAll('section[id]');
@@ -139,5 +91,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	window.addEventListener('scroll', changeNavOnScroll);
-	changeNavOnScroll(); // Initial check
+	changeNavOnScroll();
 });

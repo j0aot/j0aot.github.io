@@ -1,26 +1,24 @@
-/* styles/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-	/* Dark Theme Palette */
-	--bg-color: #121212; /* Deep dark background */
-	--surface-color: #1e1e1e; /* Slightly lighter for cards, inputs */
-	--surface-hover-color: #2a2a2a; /* For hover states on surfaces */
-	--primary-color: #3498db; /* Vibrant blue for primary actions */
-	--rgb-primary-color: 52, 152, 219; /* RGB version for rgba() */
-	--secondary-color: #f1c40f; /* Bright yellow for accents */
-	--heading-color: #e0e0e0; /* Light grey for headings */
-	--text-color: #cccccc; /* Lighter grey for body text */
-	--text-muted-color: #888888; /* Muted grey for less important text */
-	--border-color: #333333; /* Subtle borders */
-	--shadow-color-rgb: 0, 0, 0; /* Shadows will be subtle on dark theme */
+	--bg-color: #121212;
+	--surface-color: #1e1e1e;
+	--surface-hover-color: #2a2a2a;
+	--primary-color: #2b6f9c;
+	--rgb-primary-color: 52, 152, 219;
+	--secondary-color: #f1c40f;
+	--heading-color: #e0e0e0;
+	--text-color: #cccccc;
+	--text-muted-color: #888888;
+	--border-color: #333333;
+	--shadow-color-rgb: 0, 0, 0;
 
 	--border-radius: 8px;
 	--transition-fast: 0.2s ease-out;
 	--transition-medium: 0.3s ease-out;
 	--transition-slow: 0.5s ease-out;
 
-	--shadow-light: 0 4px 15px rgba(var(--shadow-color-rgb), 0.15); /* Adjusted alpha for dark theme */
+	--shadow-light: 0 4px 15px rgba(var(--shadow-color-rgb), 0.15);
 	--shadow-medium: 0 6px 20px rgba(var(--shadow-color-rgb), 0.2);
 	--shadow-heavy: 0 8px 30px rgba(var(--shadow-color-rgb), 0.25);
 }
@@ -43,7 +41,7 @@ body {
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden; /* Prevent horizontal scroll from animations */
+	overflow-x: hidden;
 }
 
 /* --- General Section Styling --- */
@@ -77,7 +75,7 @@ section h2::after {
 
 /* --- Header & Navigation --- */
 header {
-	background-color: rgba(18, 18, 18, 0.85); /* Semi-transparent dark background */
+	background-color: rgba(18, 18, 18, 0.85);
 	backdrop-filter: blur(10px);
 	position: fixed;
 	top: 0;
@@ -93,7 +91,7 @@ nav {
 	align-items: center;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 1.5rem; /* Adjusted padding */
+	padding: 0 1.5rem;
 	height: 70px;
 }
 
@@ -116,7 +114,7 @@ nav a {
 	font-weight: 500;
 	font-size: 0.95rem;
 	position: relative;
-	padding-bottom: 0.35rem; /* Increased padding for underline space */
+	padding-bottom: 0.35rem;
 	transition: color var(--transition-fast);
 }
 
@@ -126,7 +124,7 @@ nav a::after {
 	width: 0;
 	height: 2px;
 	background: var(--primary-color);
-	bottom: 0; /* Aligned to bottom of padding */
+	bottom: 0;
 	left: 0;
 	transition: width var(--transition-medium);
 }
@@ -149,9 +147,8 @@ nav a.active::after {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 70px 1.5rem 2rem; /* Added top padding for fixed header */
+	padding: 70px 1.5rem 2rem;
 	position: relative;
-	/* Optional: background-image: url('./assets/your-hero-image.jpg'); */
 }
 
 .hero h2 {
@@ -159,7 +156,7 @@ nav a.active::after {
 	color: var(--heading-color);
 	margin-bottom: 1rem;
 	font-weight: 700;
-	letter-spacing: -1px; /* Slightly tighter letter spacing */
+	letter-spacing: -1px;
 }
 
 .hero h2 span {
@@ -183,10 +180,10 @@ nav a.active::after {
 
 /* --- Button Styles --- */
 .btn {
-	display: inline-flex; /* For aligning icon and text */
+	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.5rem; /* Space between icon and text */
+	gap: 0.5rem;
 	padding: 0.75rem 1.75rem;
 	border-radius: var(--border-radius);
 	text-decoration: none;
@@ -199,13 +196,12 @@ nav a.active::after {
 }
 
 .btn {
-	/* Primary button style */
 	background-color: var(--primary-color);
 	color: #fff;
 }
 
 .btn:hover {
-	background-color: #2980b9; /* Darker shade of primary */
+	background-color: #2980b9;
 	transform: translateY(-3px);
 	box-shadow: 0 4px 15px rgba(var(--rgb-primary-color), 0.3);
 }
@@ -218,7 +214,7 @@ nav a.active::after {
 
 .btn-outline:hover {
 	background-color: var(--primary-color);
-	color: #fff; /* Text color changes to white on hover */
+	color: #fff;
 	transform: translateY(-3px);
 }
 
@@ -235,14 +231,24 @@ nav a.active::after {
 	gap: 3rem;
 	align-items: center;
 }
+.about-text {
+	text-align: center;
+}
 
 @media (min-width: 768px) {
 	.about-content {
 		grid-template-columns: 0.8fr 1.2fr;
-		text-align: left; /* Align text to left on larger screens */
+		text-align: left;
 	}
 	.profile-img {
-		margin: 0; /* Remove auto margin for left alignment */
+		margin: 0;
+	}
+	@media (min-width: 768px) {
+		/* .about-content já tem text-align: left nesta media query */
+		/* Para garantir que o texto dentro de .about-text também fica à esquerda: */
+		.about-text {
+			text-align: left;
+		}
 	}
 }
 
@@ -252,7 +258,7 @@ nav a.active::after {
 	border-radius: 50%;
 	aspect-ratio: 1/1;
 	object-fit: cover;
-	margin: 0 auto; /* Center on mobile */
+	margin: 0 auto;
 	box-shadow: 0 0 0 8px var(--surface-color), 0 0 0 10px var(--primary-color);
 	transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 }
@@ -273,7 +279,7 @@ nav a.active::after {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 	gap: 2rem;
-	justify-items: center; /* Center items within grid cells */
+	justify-items: center;
 }
 
 .skill-logo-item {
@@ -285,8 +291,8 @@ nav a.active::after {
 	background-color: var(--surface-color);
 	border-radius: var(--border-radius);
 	transition: transform var(--transition-medium), background-color var(--transition-medium), box-shadow var(--transition-light);
-	width: 100%; /* Ensure items take full cell width */
-	max-width: 150px; /* Optional: constrain max width of skill item */
+	width: 100%;
+	max-width: 150px;
 }
 
 .skill-logo-item:hover {
@@ -296,8 +302,8 @@ nav a.active::after {
 }
 
 .skill-logo-item img {
-	max-width: 50px; /* Limit logo size */
-	max-height: 50px; /* Limit logo size */
+	max-width: 50px;
+	max-height: 50px;
 	margin-bottom: 0.75rem;
 	transition: transform var(--transition-fast);
 }
@@ -310,15 +316,15 @@ nav a.active::after {
 	font-size: 0.9rem;
 	color: var(--text-muted-color);
 	font-weight: 500;
-	margin-top: auto; /* Pushes text to bottom if logos have varying heights */
+	margin-top: auto;
 }
 
-/* Skill Tags (used in About and Project Cards) */
+/* Skill Tags */
 .skills {
 	/* Container for skill tags */
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.6rem; /* Slightly increased gap */
+	gap: 0.6rem;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
@@ -327,7 +333,7 @@ nav a.active::after {
 	background-color: rgba(var(--rgb-primary-color), 0.15);
 	color: var(--primary-color);
 	padding: 0.35rem 0.9rem;
-	border-radius: 20px; /* Pill shape */
+	border-radius: 20px;
 	font-size: 0.8rem;
 	font-weight: 500;
 	transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
@@ -335,7 +341,7 @@ nav a.active::after {
 
 .skill-tag:hover {
 	background-color: var(--primary-color);
-	color: #fff; /* White text on primary background */
+	color: #fff;
 	transform: scale(1.05);
 }
 
@@ -354,25 +360,25 @@ nav a.active::after {
 	display: flex;
 	flex-direction: column;
 	transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
-	border: 1px solid var(--border-color); /* Subtle border */
+	border: 1px solid var(--border-color);
 }
 
 .card:hover {
 	transform: translateY(-8px);
 	box-shadow: var(--shadow-medium);
-	border-color: var(--primary-color); /* Highlight border on hover */
+	border-color: var(--primary-color);
 }
 
 .card img {
 	width: 100%;
 	height: 220px;
-	object-fit: cover; /* Ensures image covers the area, might crop */
+	object-fit: cover;
 	transition: transform var(--transition-slow), filter var(--transition-slow);
 }
 
 .card:hover img {
-	transform: scale(1.03); /* Subtle zoom on image */
-	filter: brightness(1.1); /* Slightly brighten image on hover */
+	transform: scale(1.03);
+	filter: brightness(1.1);
 }
 
 .card h3 {
@@ -386,7 +392,7 @@ nav a.active::after {
 	padding: 0 1.25rem;
 	color: var(--text-muted-color);
 	font-size: 0.95rem;
-	flex-grow: 1; /* Allows p to take available space, pushing links down */
+	flex-grow: 1;
 	margin-bottom: 1rem;
 }
 
@@ -395,19 +401,18 @@ nav a.active::after {
 	justify-content: flex-start;
 	gap: 0.75rem;
 	padding: 0 1.25rem 1.25rem;
-	margin-top: auto; /* Ensures links are at the bottom */
+	margin-top: auto;
 }
 
 /* --- Contact Section --- */
 .contact-container {
 	.btn {
-		/* Primary button style */
 		background-color: var(--primary-color);
 		color: #fff;
 	}
 
 	.btn:hover {
-		background-color: #2980b9; /* Darker shade of primary */
+		background-color: #2980b9;
 		transform: translateY(-3px);
 		box-shadow: 0 4px 15px rgba(var(--rgb-primary-color), 0.3);
 	}
@@ -420,12 +425,11 @@ nav a.active::after {
 
 	.btn-outline:hover {
 		background-color: var(--primary-color);
-		color: #fff; /* Text color changes to white on hover */
+		color: #fff;
 		transform: translateY(-3px);
 	}
 
 	.btn-sm {
-		/* Smaller buttons for cards */
 		padding: 0.5rem 1rem;
 		font-size: 0.85rem;
 	}
@@ -441,10 +445,10 @@ nav a.active::after {
 	@media (min-width: 768px) {
 		.about-content {
 			grid-template-columns: 0.8fr 1.2fr;
-			text-align: left; /* Align text to left on larger screens */
+			text-align: left;
 		}
 		.profile-img {
-			margin: 0; /* Remove auto margin for left alignment */
+			margin: 0;
 		}
 	}
 
@@ -454,14 +458,14 @@ nav a.active::after {
 		border-radius: 50%;
 		aspect-ratio: 1/1;
 		object-fit: cover;
-		margin: 0 auto; /* Center on mobile */
+		margin: 0 auto;
 		box-shadow: 0 0 0 8px var(--surface-color), 0 0 0 10px var(--primary-color);
 		transition: transform var(--transition-medium), box-shadow var(--transition-medium);
 	}
 
 	.profile-img:hover {
 		transform: scale(1.05);
-		box-shadow: 0 0 0 10px var(--surface-color), 0 0 0 12px var(--secondary-color); /* Example hover effect */
+		box-shadow: 0 0 0 10px var(--surface-color), 0 0 0 12px var(--secondary-color);
 	}
 
 	.about-text p {
@@ -475,7 +479,7 @@ nav a.active::after {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		gap: 2rem;
-		justify-items: center; /* Center items within grid cells */
+		justify-items: center;
 	}
 
 	.skill-logo-item {
@@ -487,8 +491,8 @@ nav a.active::after {
 		background-color: var(--surface-color);
 		border-radius: var(--border-radius);
 		transition: transform var(--transition-medium), background-color var(--transition-medium), box-shadow var(--transition-light);
-		width: 100%; /* Ensure items take full cell width */
-		max-width: 150px; /* Optional: constrain max width of skill item */
+		width: 100%;
+		max-width: 150px;
 	}
 
 	.skill-logo-item:hover {
@@ -498,8 +502,8 @@ nav a.active::after {
 	}
 
 	.skill-logo-item img {
-		max-width: 50px; /* Limit logo size */
-		max-height: 50px; /* Limit logo size */
+		max-width: 50px;
+		max-height: 50px;
 		margin-bottom: 0.75rem;
 		transition: transform var(--transition-fast);
 	}
@@ -512,15 +516,14 @@ nav a.active::after {
 		font-size: 0.9rem;
 		color: var(--text-muted-color);
 		font-weight: 500;
-		margin-top: auto; /* Pushes text to bottom if logos have varying heights */
+		margin-top: auto;
 	}
 
-	/* Skill Tags (used in About and Project Cards) */
+	/* Skill Tags */
 	.skills {
-		/* Container for skill tags */
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.6rem; /* Slightly increased gap */
+		gap: 0.6rem;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
@@ -529,7 +532,7 @@ nav a.active::after {
 		background-color: rgba(var(--rgb-primary-color), 0.15);
 		color: var(--primary-color);
 		padding: 0.35rem 0.9rem;
-		border-radius: 20px; /* Pill shape */
+		border-radius: 20px;
 		font-size: 0.8rem;
 		font-weight: 500;
 		transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
@@ -537,7 +540,7 @@ nav a.active::after {
 
 	.skill-tag:hover {
 		background-color: var(--primary-color);
-		color: #fff; /* White text on primary background */
+		color: #fff;
 		transform: scale(1.05);
 	}
 
@@ -556,25 +559,25 @@ nav a.active::after {
 		display: flex;
 		flex-direction: column;
 		transition: transform var(--transition-medium), box-shadow var(--transition-medium), border-color var(--transition-medium);
-		border: 1px solid var(--border-color); /* Subtle border */
+		border: 1px solid var(--border-color);
 	}
 
 	.card:hover {
 		transform: translateY(-8px);
 		box-shadow: var(--shadow-medium);
-		border-color: var(--primary-color); /* Highlight border on hover */
+		border-color: var(--primary-color);
 	}
 
 	.card img {
 		width: 100%;
 		height: 220px;
-		object-fit: cover; /* Ensures image covers the area, might crop */
+		object-fit: cover;
 		transition: transform var(--transition-slow), filter var(--transition-slow);
 	}
 
 	.card:hover img {
-		transform: scale(1.03); /* Subtle zoom on image */
-		filter: brightness(1.1); /* Slightly brighten image on hover */
+		transform: scale(1.03);
+		filter: brightness(1.1);
 	}
 
 	.card h3 {
@@ -588,7 +591,7 @@ nav a.active::after {
 		padding: 0 1.25rem;
 		color: var(--text-muted-color);
 		font-size: 0.95rem;
-		flex-grow: 1; /* Allows p to take available space, pushing links down */
+		flex-grow: 1;
 		margin-bottom: 1rem;
 	}
 
@@ -597,13 +600,13 @@ nav a.active::after {
 		justify-content: flex-start;
 		gap: 0.75rem;
 		padding: 0 1.25rem 1.25rem;
-		margin-top: auto; /* Ensures links are at the bottom */
+		margin-top: auto;
 	}
 
 	/* --- Contact Section --- */
 	.contact-container {
 		display: grid;
-		grid-template-columns: 1fr; /* Default to single column */
+		grid-template-columns: 1fr;
 		gap: 2.5rem;
 		background-color: var(--surface-color);
 		padding: 2.5rem;
@@ -612,10 +615,13 @@ nav a.active::after {
 	}
 
 	@media (min-width: 992px) {
-		/* Apply two columns on larger screens */
 		.contact-container {
-			grid-template-columns: 1fr 1.2fr; /* Adjust ratio as needed */
+			grid-template-columns: 1fr 1.2fr;
 		}
+	}
+	.contact-info {
+		display: flex;
+		flex-direction: column;
 	}
 
 	.contact-info h3 {
@@ -633,12 +639,12 @@ nav a.active::after {
 
 	.contact-info .social-links {
 		display: flex;
-		gap: 1.25rem; /* Spacing for social icons */
+		gap: 1.25rem;
 	}
 
 	.contact-info .social-links a {
 		color: var(--text-muted-color);
-		font-size: 1.5rem; /* Size of social icons */
+		font-size: 1.5rem;
 		transition: color var(--transition-fast), transform var(--transition-fast);
 	}
 
@@ -656,10 +662,10 @@ nav a.active::after {
 	#contactForm input,
 	#contactForm textarea {
 		padding: 0.85rem 1rem;
-		border: 1px solid var(--border-color);
+		border: 1px solid var (--border-color);
 		border-radius: var(--border-radius);
 		font-size: 0.95rem;
-		background-color: var(--bg-; color); /* Slightly darker than surface for contrast */
+		background-color: var(--bg- color);
 		color: var(--text-color);
 		transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 	}
@@ -667,7 +673,7 @@ nav a.active::after {
 	#contactForm input::placeholder,
 	#contactForm textarea::placeholder {
 		color: var(--text-muted-color);
-		font-style: italic; /* Italicize placeholder text */
+		font-style: italic;
 	}
 
 	#contactForm input[type='text'],
@@ -677,8 +683,8 @@ nav a.active::after {
 	}
 
 	#contactForm textarea {
-		resize: vertical; /* Allow vertical resizing */
-		min-height: 120px; /* Minimum height for textarea */
+		resize: vertical;
+		min-height: 120px;
 	}
 
 	#contactForm input,
@@ -695,21 +701,22 @@ nav a.active::after {
 	}
 
 	#contactForm button[type='submit'] {
-		margin-top: 0.5rem; /* Add some space above the button */
+		margin-top: 0.5rem;
 	}
 
 	#formMsg {
-		margin-top: 0.75rem; /* Spacing for the message */
+		margin-top: 0.75rem;
 		font-size: 0.9rem;
-		min-height: 1.2em; /* Reserve space to prevent layout shift */
+		min-height: 1.2em;
 		text-align: left;
 		font-weight: 500;
-		color: var(--primary-color); /* Default color for success message */
+		color: var(--primary-color);
 	}
 
 	/* --- Footer --- */
+	/* --- Footer --- */
 	footer {
-		background-color: var(--surface-color); /* Slightly lighter than main bg */
+		background-color: var(--surface-color);
 		padding: 2.5rem 1.5rem;
 		text-align: center;
 		border-top: 1px solid var(--border-color);
@@ -723,19 +730,19 @@ nav a.active::after {
 	.footer-content .social-links {
 		display: flex;
 		justify-content: center;
-		gap: 1.5rem; /* Increased gap */
+		gap: 1.5rem;
 		margin-bottom: 1.25rem;
 	}
 
 	.footer-content .social-links a {
 		color: var(--text-muted-color);
-		font-size: 1.6rem; /* Slightly larger icons */
+		font-size: 1.6rem;
 		transition: color var(--transition-fast), transform var(--transition-fast);
 	}
 
 	.footer-content .social-links a:hover {
 		color: var(--primary-color);
-		transform: translateY(-3px); /* Subtle lift effect */
+		transform: translateY(-3px);
 	}
 
 	.footer-content p {
@@ -744,7 +751,6 @@ nav a.active::after {
 	}
 
 	/* --- Scroll Animations --- */
-	/* Class to add via JS for reveal on scroll */
 	.hero h2,
 	.hero p,
 	.hero-buttons,
@@ -753,8 +759,7 @@ nav a.active::after {
 	.card,
 	.contact-info,
 	#contactForm {
-		opacity: 0;
-		transform: translateY(20px); /* Start slightly lower */
+		transform: translateY(20px);
 		transition: opacity 0.6s var(--transition-slow), transform 0.6s var(--transition-slow);
 	}
 
@@ -765,15 +770,14 @@ nav a.active::after {
 
 	/* --- Responsive Adjustments --- */
 	@media (max-width: 991px) {
-		/* Adjusted breakpoint for contact container */
 		.contact-container {
-			grid-template-columns: 1fr; /* Stack on medium screens and below */
+			grid-template-columns: 1fr;
 		}
 	}
 
 	@media (max-width: 768px) {
 		nav ul {
-			display: none; /* Basic mobile menu: hide links. Implement a toggle for a real app */
+			display: none;
 		}
 
 		.hero {
@@ -789,15 +793,15 @@ nav a.active::after {
 		}
 
 		.projects-grid {
-			grid-template-columns: 1fr; /* Stack cards on smaller screens */
+			grid-template-columns: 1fr;
 		}
 
 		.about-content {
-			grid-template-columns: 1fr; /* Stack about content on smaller screens */
+			grid-template-columns: 1fr;
 			text-align: center;
 		}
 		.profile-img {
-			margin: 0 auto 2rem; /* Center profile image and add bottom margin */
+			margin: 0 auto 2rem;
 		}
 	}
 
@@ -839,7 +843,6 @@ nav a.active::after {
 		}
 	}
 
-	/* Keyframe animation for fadeInUp (used in hero and can be reused) */
 	@keyframes fadeInUp {
 		from {
 			opacity: 0;
@@ -851,10 +854,7 @@ nav a.active::after {
 		}
 	}
 }
-/* End of styles/style.css */
 
-/* Additional styles can be added below as needed */
-/* Example: Custom styles for specific sections */
 section.custom-section {
 	background-color: var(--surface-color);
 	padding: 3rem 1.5rem;
@@ -878,17 +878,15 @@ section.custom-section .btn {
 
 section.custom-section .btn:hover {
 	background-color: var(--primary-color);
-	color: #fff; /* Ensure text is readable */
+	color: #fff;
 }
 
-/* Responsive adjustments for custom sections */
 @media (max-width: 768px) {
 	section.custom-section {
 		padding: 2rem 1rem;
 	}
 }
 
-/* Example: Styles for a footer section */
 footer.custom-footer {
 	background-color: var(--surface-color);
 	padding: 2rem 1.5rem;
@@ -916,53 +914,11 @@ footer.custom-footer .social-links a {
 
 footer.custom-footer .social-links a:hover {
 	color: var(--primary-color);
-	transform: translateY(-3px); /* Subtle lift effect */
+	transform: translateY(-3px);
 }
 
-.footer.custom-footer p {
-	font-size: 0.9rem;
-	color: var(--text-muted-color);
-}
-
-/* Responsive adjustments for footer */
 @media (max-width: 768px) {
 	footer.custom-footer {
 		padding: 1.5rem 1rem;
-	}
-}
-
-/* Example: Styles for a section with a background image */
-section.background-image {
-	background-image: url('./assets/your-background-image.jpg');
-	background-size: cover;
-	background-position: center;
-	color: var(--text-color);
-	padding: 4rem 1.5rem;
-	border-radius: var(--border-radius);
-	box-shadow: var(--shadow-light);
-}
-
-section.background-image h2 {
-	color: var(--heading-color);
-	margin-bottom: 1.5rem;
-}
-
-section.background-image p {
-	color: var(--text-muted-color);
-	font-size: 1rem;
-}
-section.background-image .btn {
-	margin-top: 1rem;
-}
-
-section.background-image .btn:hover {
-	background-color: var(--primary-color);
-	color: #fff; /* Ensure text is readable */
-}
-
-/* Responsive adjustments for background image section */
-@media (max-width: 768px) {
-	section.background-image {
-		padding: 2rem 1rem;
 	}
 }
