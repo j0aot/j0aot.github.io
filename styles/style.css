@@ -231,9 +231,6 @@ nav a.active::after {
 	gap: 3rem;
 	align-items: center;
 }
-.about-text {
-	text-align: center;
-}
 
 @media (min-width: 768px) {
 	.about-content {
@@ -648,8 +645,6 @@ nav a.active::after {
 		transition: color var(--transition-fast), transform var(--transition-fast);
 		font-size: medium;
 	}
-
-
 
 	.contact-info .social-links a:hover {
 		color: var(--primary-color);
