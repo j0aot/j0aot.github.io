@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// Mobile nav toggle
+	const navToggle = document.getElementById('nav-toggle');
+	if (navToggle) {
+		navToggle.onclick = function () {
+			const navUl = document.querySelector('nav ul');
+			if (navUl) navUl.classList.toggle('show');
+		};
+	}
+
 	// Form handling
 	const contactForm = document.getElementById('contactForm');
 	const formMsg = document.getElementById('formMsg');
@@ -82,4 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	window.addEventListener('scroll', changeNavOnScroll);
 	changeNavOnScroll();
+
+	// Theme toggle (dark/light)
+	const themeToggle = document.getElementById('theme-toggle');
+	if (themeToggle) {
+		themeToggle.onclick = function () {
+			document.body.classList.toggle('light-theme');
+		};
+	}
 });

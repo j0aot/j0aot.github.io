@@ -6,7 +6,7 @@
 	--surface-hover-color: #2a2a2a;
 	--primary-color: #2b6f9c;
 	--rgb-primary-color: 52, 152, 219;
-	--secondary-color: #f1c40f;
+	--secondary-color: #575757;
 	--heading-color: #e0e0e0;
 	--text-color: #cccccc;
 	--text-muted-color: #888888;
@@ -137,6 +137,73 @@ nav a.active {
 nav a:hover::after,
 nav a.active::after {
 	width: 100%;
+}
+
+#theme-toggle {
+	background: none;
+	border: none;
+	font-size: 1.6rem;
+	color: var(--primary-color);
+	cursor: pointer;
+	margin-left: 1.5rem;
+	transition: color 0.2s;
+	position: relative;
+}
+
+#theme-toggle:hover {
+	color: var(--secondary-color);
+}
+
+#nav-toggle {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 2rem;
+	color: var(--primary-color);
+	position: absolute;
+	right: 1.5rem;
+	top: 18px;
+	cursor: pointer;
+	z-index: 1001;
+}
+body.light-theme {
+	--bg-color: #f5f5f5;
+	--surface-color: #fff;
+	--surface-hover-color: #e0e0e0;
+	--primary-color: #2b6f9c;
+	--heading-color: #222;
+	--text-color: #222;
+	--text-muted-color: #555;
+	--border-color: #ccc;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+	nav ul {
+		display: none;
+		position: absolute;
+		top: 70px;
+		right: 0;
+		background: var(--surface-color);
+		flex-direction: column;
+		width: 200px;
+		box-shadow: var(--shadow-medium);
+		padding: 1rem 0;
+	}
+	nav ul.show {
+		display: flex;
+	}
+	#nav-toggle {
+		display: block;
+	}
+	#theme-toggle {
+		margin-left: 0;
+	}
+}
+@media (min-width: 769px) {
+	#nav-toggle {
+		display: none;
+	}
 }
 
 /* --- Hero Section --- */
