@@ -303,10 +303,13 @@ body.light-theme {
 	width: 1000px;
 }
 @media (min-width: 768px) {
-	.about-content {
-		grid-template-columns: 0.8fr 1.2fr;
-		text-align: left;
-	}
+	 .about-content p {
+        max-width: 1000px;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
 	.profile-img {
 		margin: 0;
 	}
