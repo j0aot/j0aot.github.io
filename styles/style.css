@@ -148,6 +148,7 @@ nav a.active::after {
 	margin-left: 1.5rem;
 	transition: color 0.2s;
 	position: relative;
+	right: 50px;
 }
 
 #theme-toggle:hover {
@@ -286,19 +287,21 @@ body.light-theme {
 }
 
 .btn-sm {
-	/* Smaller buttons for cards */
 	padding: 0.5rem 1rem;
 	font-size: 0.85rem;
 }
 
 /* --- About Me Section --- */
 .about-content {
-	display: grid;
-	grid-template-columns: 1fr;
 	gap: 3rem;
-	align-items: center;
+	display: flex;
+	justify-content: center;
+	max-width: 1500px;
 }
 
+.about-content p {
+	width: 1000px;
+}
 @media (min-width: 768px) {
 	.about-content {
 		grid-template-columns: 0.8fr 1.2fr;
@@ -308,8 +311,6 @@ body.light-theme {
 		margin: 0;
 	}
 	@media (min-width: 768px) {
-		/* .about-content já tem text-align: left nesta media query */
-		/* Para garantir que o texto dentro de .about-text também fica à esquerda: */
 		.about-text {
 			text-align: left;
 		}
@@ -329,13 +330,14 @@ body.light-theme {
 
 .profile-img:hover {
 	transform: scale(1.05);
-	box-shadow: 0 0 0 10px var(--surface-color), 0 0 0 12px var(--secondary-color); /* Example hover effect */
+	box-shadow: 0 0 0 10px var(--surface-color), 0 0 0 12px var(--secondary-color);
 }
 
 .about-text p {
 	margin-bottom: 1rem;
 	font-size: 1.05rem;
 	color: var(--text-color);
+	text-align: center;
 }
 
 /* --- Skills Section --- */
