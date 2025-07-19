@@ -1,273 +1,261 @@
 <!DOCTYPE html>
-								<html lang="en">
-									<head>
-										<meta charset="UTF-8" />
-										<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-										<meta name="description" content="João Tavares - Professional Web Developer specializing in front-end and back-end development with React, Node.js, and modern web technologies." />
-										<meta name="keywords" content="João Tavares, web developer, front-end, back-end, portfolio, HTML, CSS, JavaScript, React, Node.js, MySQL" />
-										<meta name="author" content="João Tavares" />
-										<meta name="robots" content="index, follow" />
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="João Tavares - Professional Web Developer specializing in front-end and back-end development with React, Node.js, and modern web technologies." />
+		<meta name="keywords" content="João Tavares, web developer, front-end, back-end, portfolio, HTML, CSS, JavaScript, React, Node.js, MySQL" />
+		<meta name="author" content="João Tavares" />
+		<meta name="robots" content="index, follow" />
 
-									
+		<title>João Tavares | Web Developer Portfolio</title>
 
-										<title>João Tavares | Web Developer Portfolio</title>
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
 
-										<!-- Favicon -->
-										<link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
-										<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+		<!-- Preload critical resources -->
+		<link rel="preload" href="./styles/style.css" as="style" />
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-										<!-- Preload critical resources -->
-										<link rel="preload" href="./styles/style.css" as="style" />
-										<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" />
-										<link rel="preconnect" href="https://fonts.googleapis.com" />
-										<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./styles/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
 
-										<!-- Stylesheets -->
-										<link rel="stylesheet" href="./styles/style.css" />
-										<link
-											rel="stylesheet"
-											href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-											integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-											crossorigin="anonymous"
-											referrerpolicy="no-referrer"
-										/>
+	<body>
+		<!-- Loading indicator -->
+		<div class="loader" aria-hidden="true">
+			<div class="loader-spinner"></div>
+		</div>
 
-									
-									</head>
+		<!-- Skip to main content for accessibility -->
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 
-									<body>
-										<!-- Loading indicator -->
-										<div class="loader" aria-hidden="true">
-											<div class="loader-spinner"></div>
-										</div>
+		<header role="banner">
+			<nav role="navigation" aria-label="Main navigation">
+				<h1>João Tavares</h1>
+				<ul>
+					<li><a href="#home" aria-current="page">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skills-section">Skills</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<button id="theme-toggle" aria-label="Toggle dark/light mode" type="button">
+					<span class="theme-icon">🌓</span>
+				</button>
+			</nav>
+			<button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+		</header>
 
-										<!-- Skip to main content for accessibility -->
-										<a href="#main-content" class="skip-link">Skip to main content</a>
+		<main id="main-content" role="main">
+			<!-- Hero Section -->
+			<section id="home" class="hero" aria-labelledby="hero-heading">
+				<h2 id="hero-heading">Hello, my name is <span>João Tavares</span></h2>
+				<p>Web Developer | Front-end &amp; Back-end</p>
+				<div class="hero-buttons">
+					<a href="#projects" class="btn" role="button">
+						<i class="fas fa-code" aria-hidden="true"></i>
+						View Projects
+					</a>
+					<a href="#contact" class="btn btn-outline" role="button">
+						<i class="fas fa-envelope" aria-hidden="true"></i>
+						Contact
+					</a>
+				</div>
+			</section>
 
-										<header role="banner">
-											<nav role="navigation" aria-label="Main navigation">
-												<h1>João Tavares</h1>
-												<ul>
-													<li><a href="#home" aria-current="page">Home</a></li>
-													<li><a href="#about">About</a></li>
-													<li><a href="#skills-section">Skills</a></li>
-													<li><a href="#projects">Projects</a></li>
-													<li><a href="#contact">Contact</a></li>
-												</ul>
-												<button id="theme-toggle" aria-label="Toggle dark/light mode" type="button">
-													<span class="theme-icon">🌓</span>
-												</button>
-											</nav>
-											<button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
-												<span class="hamburger-line"></span>
-												<span class="hamburger-line"></span>
-												<span class="hamburger-line"></span>
-											</button>
-										</header>
+			<!-- About Section -->
+			<section id="about" aria-labelledby="about-heading">
+				<h2 id="about-heading">About Me</h2>
+				<div class="about-content">
+					<div class="about-text">
+						<p>
+							I'm a passionate web developer with expertise in modern web technologies including HTML, CSS, JavaScript, React, Node.js and MySQL. I specialize in creating efficient, scalable, and
+							user-focused digital solutions.
+						</p>
+						<p>
+							I thrive on tackling complex challenges and continuously learning new technologies to build performant web applications that deliver exceptional user experiences. My goal is to bridge
+							the gap between design and functionality.
+						</p>
+					</div>
+				</div>
+			</section>
 
-										<main id="main-content" role="main">
-											<!-- Hero Section -->
-											<section id="home" class="hero" aria-labelledby="hero-heading">
-												<h2 id="hero-heading">Hello, my name is <span>João Tavares</span></h2>
-												<p>Web Developer | Front-end &amp; Back-end</p>
-												<div class="hero-buttons">
-													<a href="#projects" class="btn" role="button">
-														<i class="fas fa-code" aria-hidden="true"></i>
-														View Projects
-													</a>
-													<a href="#contact" class="btn btn-outline" role="button">
-														<i class="fas fa-envelope" aria-hidden="true"></i>
-														Contact
-													</a>
-												</div>
-											</section>
+			<!-- Skills Section -->
+			<section id="skills-section" aria-labelledby="skills-heading">
+				<h2 id="skills-heading">My Skills</h2>
 
-											<!-- About Section -->
-											<section id="about" aria-labelledby="about-heading">
-												<h2 id="about-heading">About Me</h2>
-												<div class="about-content">
-													<div class="about-text">
-														<p>
-															I'm a passionate web developer with expertise in modern web technologies including HTML, CSS, JavaScript, React, Node.js and MySQL. I specialize in creating efficient,
-															scalable, and user-focused digital solutions.
-														</p>
-														<p>
-															I thrive on tackling complex challenges and continuously learning new technologies to build performant web applications that deliver exceptional user experiences. My goal
-															is to bridge the gap between design and functionality.
-														</p>
+				<!-- Skills with logos -->
+				<div class="skills-logo-grid" role="list">
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/html.png" alt="HTML5 Logo" loading="lazy" width="50" height="50" />
+						<p>HTML5</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/css.svg" alt="CSS3 Logo" loading="lazy" width="50" height="50" />
+						<p>CSS3</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/javascript.png" alt="JavaScript Logo" loading="lazy" width="50" height="50" />
+						<p>JavaScript</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/react.png" alt="React Logo" loading="lazy" width="50" height="50" />
+						<p>React</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/nodejs.png" alt="Node.js Logo" loading="lazy" width="50" height="50" />
+						<p>Node.js</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/mysql.png" alt="MySQL Logo" loading="lazy" width="50" height="50" />
+						<p>MySQL</p>
+					</div>
+					<div class="skill-logo-item" role="listitem">
+						<img src="./assets/logos/git.png" alt="Git Logo" loading="lazy" width="50" height="50" />
+						<p>Git</p>
+					</div>
+				</div>
+			</section>
 
-														
-											</section>
-
-											<!-- Skills Section -->
-											<section id="skills-section" aria-labelledby="skills-heading">
-												<h2 id="skills-heading">My Skills</h2>
-
-												<!-- Skills with logos -->
-												<div class="skills-logo-grid" role="list">
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/html.png" alt="HTML5 Logo" loading="lazy" width="50" height="50" />
-														<p>HTML5</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/css.svg" alt="CSS3 Logo" loading="lazy" width="50" height="50" />
-														<p>CSS3</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/javascript.png" alt="JavaScript Logo" loading="lazy" width="50" height="50" />
-														<p>JavaScript</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/react.png" alt="React Logo" loading="lazy" width="50" height="50" />
-														<p>React</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/nodejs.png" alt="Node.js Logo" loading="lazy" width="50" height="50" />
-														<p>Node.js</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/mysql.png" alt="MySQL Logo" loading="lazy" width="50" height="50" />
-														<p>MySQL</p>
-													</div>
-													<div class="skill-logo-item" role="listitem">
-														<img src="./assets/logos/git.png" alt="Git Logo" loading="lazy" width="50" height="50" />
-														<p>Git</p>
-													</div>
-												</div>
-
-											
-											</section>
-
-											<!-- Projects Section -->
-											<section id="projects" aria-labelledby="projects-heading">
-												<h2 id="projects-heading">Featured Projects</h2>
-												<div class="projects-grid">
-													<!-- Project 1 -->
-													<article class="card">
-														<div class="card-image">
-															<img src="./assets/projects/expense.png" alt="Expense Tracker application interface showing dashboard and expense categories" loading="lazy" />
-														</div>
-														<div class="card-content">
-															<h3>Expense Tracker</h3>
-															<p>
-																A comprehensive expense management application with user authentication, category-based tracking, data visualization, and budget management features. Built with modern
-																web technologies for optimal performance.
-															</p>
-															<div class="skills" role="list" aria-label="Technologies used">
-																<span class="skill-tag" role="listitem">HTML</span>
-																<span class="skill-tag" role="listitem">CSS</span>
-																<span class="skill-tag" role="listitem">JavaScript</span>
-																<span class="skill-tag" role="listitem">React</span>
-																<span class="skill-tag" role="listitem">Node.js</span>
-																<span class="skill-tag" role="listitem">MySQL</span>
-															</div>
-															<div class="card-links">
-																<a href="https://github.com/j0aot/expense-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-sm" aria-label="View Expense Tracker source code on GitHub">
-																	<i class="fab fa-github" aria-hidden="true"></i> Code
-																</a>
-																<a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View Expense Tracker live demo">
-																	<i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
-																</a>
-															</div>
-														</div>
-													</article>
-
-													<!-- Project 2 -->
-													<article class="card">
-														<div class="card-image">
-															<img src="./assets/projects/cidades.png" alt="Weather forecast application showing Portuguese cities weather data" loading="lazy" />
-														</div>
-														<div class="card-content">
-															<h3>Weather Forecast Portugal</h3>
-															<p>
-																A responsive weather application that displays 5-day weather forecasts for Portuguese cities using IPMA (Instituto Português do Mar e da Atmosfera) API. Features
-																real-time data and intuitive design.
-															</p>
-															<div class="skills" role="list" aria-label="Technologies used">
-																<span class="skill-tag" role="listitem">HTML</span>
-																<span class="skill-tag" role="listitem">CSS</span>
-																<span class="skill-tag" role="listitem">JavaScript</span>
-																<span class="skill-tag" role="listitem">React</span>
-																<span class="skill-tag" role="listitem">API Integration</span>
-															</div>
-												
-															
-															</div>
-														</div>
-													</article>
-
-													<!-- Project 3 -->
-													<article class="card">
-														<div class="card-image">
-															<img src="./assets/projects/todo.png" alt="Todo list application interface with task management features" loading="lazy" />
-														</div>
-														<div class="card-content">
-															<h3>Advanced Todo List</h3>
-															<p>
-																A feature-rich task management application with add, edit, delete, and sort functionality. Includes priority levels, due dates, categories, and data persistence with
-																local storage and optional cloud synchronization.
-															</p>
-															<div class="skills" role="list" aria-label="Technologies used">
-																<span class="skill-tag" role="listitem">HTML</span>
-																<span class="skill-tag" role="listitem">CSS</span>
-																<span class="skill-tag" role="listitem">JavaScript</span>
-																<span class="skill-tag" role="listitem">React</span>
-															</div>
-														
-														
-															</div>
-														</div>
-													</article>
-												</div>
-											</section>
-
-											<!-- Contact Section -->
-											<section id="contact" aria-labelledby="contact-heading">
-												<h2 id="contact-heading">Contact</h2>
-												<div class="contact-container">
-													<div class="contact-info">
-														<h3>Let's talk?</h3>
-														<p>If you have a project in mind, a question, or just want to connect, feel free to reach out! I'm always open to discussing new opportunities and collaborations.</p>
-														<div class="social-links">
-															<a href="mailto:10gabriel.tavares@gmail.com" aria-label="Send email">
-																<i class="fas fa-envelope" aria-hidden="true"></i>
-																<span>10gabriel.tavares@gmail.com</span>
-															</a>
-														</div>
-													</div>
-													<form id="contactForm" aria-label="Contact form">
-														<input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
-														<input type="email" name="email" placeholder="Your email" required aria-label="Your email address" />
-														<textarea name="message" placeholder="Your message" rows="5" required aria-label="Your message"></textarea>
-														<button type="submit" class="btn">Send message</button>
-														<p id="formMsg" aria-live="polite"></p>
-													</form>
-												</div>
-											</section>
-										</main>
-
-										<footer class="custom-footer" role="contentinfo">
-											<div class="footer-content">
-												<div class="social-links">
-													<a href="https://www.linkedin.com/in/joão-g-tavares/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-														<i class="fab fa-linkedin" aria-hidden="true"></i>
-													</a>
-													<a href="https://github.com/j0aot" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-														<i class="fab fa-github" aria-hidden="true"></i>
-													</a>
-												</div>
-												<p>&copy; 2025 João Tavares. All rights reserved.</p>
-											</div>
-										</footer>
-
-										<script src="./scripts/script.js"></script>
-									</body>
-								</html>
+			<!-- Projects Section -->
+			<section id="projects" aria-labelledby="projects-heading">
+				<h2 id="projects-heading">Featured Projects</h2>
+				<div class="projects-grid">
+					<!-- Project 1 -->
+					<article class="card">
+						<div class="card-image">
+							<img src="./assets/projects/expense.png" alt="Expense Tracker application interface showing dashboard and expense categories" loading="lazy" />
+						</div>
+						<div class="card-content">
+							<h3>Expense Tracker</h3>
+							<p>
+								Expense Tracker is a web application that allows users to track their expenses and manage their budget effectively. It features user authentication, expense categorization, and data
+								visualization.
 							</p>
+							<div class="skills" role="list" aria-label="Technologies used">
+								<span class="skill-tag" role="listitem">HTML</span>
+								<span class="skill-tag" role="listitem">CSS</span>
+								<span class="skill-tag" role="listitem">JavaScript</span>
+								<span class="skill-tag" role="listitem">React</span>
+								<span class="skill-tag" role="listitem">Node.js</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/j0aot/expense-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-sm" aria-label="View Expense Tracker source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> Code
+								</a>
+								<a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View Expense Tracker live demo">
+									<i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- Project 2 -->
+					<article class="card">
+						<div class="card-image">
+							<img src="./assets/projects/cidades.png" alt="Weather forecast application showing Portuguese cities weather data" loading="lazy" />
+						</div>
+						<div class="card-content">
+							<h3>Weather Forecast</h3>
+							<p>A weather application that shows the weather for cities in Portugal over the next 5 days. I used an API from IPMA (Instituto Português do Mar e da Atmosfera).</p>
+							<div class="skills" role="list" aria-label="Technologies used">
+								<span class="skill-tag" role="listitem">HTML</span>
+								<span class="skill-tag" role="listitem">CSS</span>
+								<span class="skill-tag" role="listitem">JavaScript</span>
+								<span class="skill-tag" role="listitem">React</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/j0aot/weather-forecast" target="_blank" rel="noopener noreferrer" class="btn btn-sm" aria-label="View Weather Forecast source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> Code
+								</a>
+								<a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View Weather Forecast live demo">
+									<i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+								</a>
+							</div>
+						</div>
+					</article>
+
+					<!-- Project 3 -->
+					<article class="card">
+						<div class="card-image">
+							<img src="./assets/projects/todo.png" alt="Todo list application interface with task management features" loading="lazy" />
+						</div>
+						<div class="card-content">
+							<h3>To Do List</h3>
+							<p>It's a to-do list application where you can add, edit, remove or sort each task. Data is persisted using local storage or a backend.</p>
+							<div class="skills" role="list" aria-label="Technologies used">
+								<span class="skill-tag" role="listitem">HTML</span>
+								<span class="skill-tag" role="listitem">CSS</span>
+								<span class="skill-tag" role="listitem">JavaScript</span>
+								<span class="skill-tag" role="listitem">React</span>
+							</div>
+							<div class="card-links">
+								<a href="https://github.com/j0aot/todo-list" target="_blank" rel="noopener noreferrer" class="btn btn-sm" aria-label="View Todo List source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> Code
+								</a>
+								<a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" aria-label="View Todo List live demo">
+									<i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+								</a>
+							</div>
 						</div>
 					</article>
 				</div>
 			</section>
+
+			<!-- Contact Section -->
+			<section id="contact" aria-labelledby="contact-heading">
+				<h2 id="contact-heading">Contact</h2>
+				<div class="contact-container">
+					<div class="contact-info">
+						<h3>Let's talk?</h3>
+						<p>If you have a project in mind, a question, or just want to connect, feel free to reach out!</p>
+						<div class="social-links">
+							<a href="mailto:10gabriel.tavares@gmail.com" aria-label="Send email">
+								<i class="fas fa-envelope" aria-hidden="true"></i>
+								<span>10gabriel.tavares@gmail.com</span>
+							</a>
+						</div>
+					</div>
+					<form id="contactForm" aria-label="Contact form">
+						<input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
+						<input type="email" name="email" placeholder="Your email" required aria-label="Your email address" />
+						<textarea name="message" placeholder="Your message" rows="5" required aria-label="Your message"></textarea>
+						<button type="submit" class="btn">Send message</button>
+						<p id="formMsg" aria-live="polite"></p>
+					</form>
+				</div>
+			</section>
 		</main>
+
+		<footer class="custom-footer" role="contentinfo">
+			<div class="footer-content">
+				<div class="social-links">
+					<a href="https://www.linkedin.com/in/joão-g-tavares/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a href="https://github.com/j0aot" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+						<i class="fab fa-github" aria-hidden="true"></i>
+					</a>
+				</div>
+				<p>&copy; 2025 João Tavares. All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script src="./scripts/script.js"></script>
 	</body>
 </html>
