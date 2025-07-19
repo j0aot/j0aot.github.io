@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		navToggle.onclick = function () {
 			if (navUl) {
 				navUl.classList.toggle('show');
-				// Add animation class for better transition
 				this.classList.toggle('active');
 			}
 		};
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		(entries, observer) => {
 			entries.forEach((entry, index) => {
 				if (entry.isIntersecting) {
-					// Add staggered animation delay for multiple elements
+					// Add  animation delay for multiple elements
 					setTimeout(() => {
 						entry.target.classList.add('show');
 					}, index * 100);
@@ -315,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	// Console welcome message for developers
+	//message for developers
 	console.log(`
     🚀 Portfolio by João Tavares
     
