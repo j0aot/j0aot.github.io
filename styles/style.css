@@ -468,14 +468,13 @@ body.light-theme header {
 	grid-template-columns: 1fr;
 	gap: 3rem;
 	align-items: center;
-	text-align: center;
+	text-align: center; 
 }
 
-@media (min-width: 768px) {
-	.about-content {
-		grid-template-columns: 0.8fr 1.2fr;
-		text-align: left;
-	}
+.about-text {
+	text-align: center; 
+	max-width: 800px; 
+	margin: 0 auto; 
 }
 
 .about-text p {
@@ -483,6 +482,15 @@ body.light-theme header {
 	font-size: 1.05rem;
 	color: var(--text-color);
 	line-height: 1.8;
+	text-align: center; 
+}
+
+
+@media (min-width: 768px) {
+	.about-content {
+		grid-template-columns: 1fr; 
+		text-align: center; 
+	}
 }
 
 .profile-img {
