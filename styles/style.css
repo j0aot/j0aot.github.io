@@ -303,12 +303,12 @@ body.light-theme {
 	width: 1000px;
 }
 @media (min-width: 768px) {
-	 .about-content p {
-        max-width: 1000px;
-        text-align: left;
-        margin-left: 0;
-        margin-right: 0;
-    }
+	.about-content p {
+		max-width: 1000px;
+		text-align: left;
+		margin-left: 0;
+		margin-right: 0;
+	}
 
 	.profile-img {
 		margin: 0;
@@ -991,4 +991,59 @@ footer.custom-footer .social-links a:hover {
 	footer.custom-footer {
 		padding: 1.5rem 1rem;
 	}
+}
+
+/* Enhanced form styling */
+.form-error {
+	color: #e74c3c !important;
+	font-weight: 600;
+}
+
+.form-success {
+	color: var(--primary-color) !important;
+	font-weight: 600;
+}
+
+.btn.sending {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.5rem;
+	color: var(--primary-color);
+	cursor: pointer;
+	animation: bounce 2s infinite;
+	transition: opacity var(--transition-medium);
+}
+
+@keyframes bounce {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateX(-50%) translateY(0);
+	}
+	40% {
+		transform: translateX(-50%) translateY(-10px);
+	}
+	60% {
+		transform: translateX(-50%) translateY(-5px);
+	}
+}
+
+/* Loading state */
+body:not(.loaded) {
+	overflow: hidden;
+}
+
+/* Enhanced mobile nav toggle */
+#nav-toggle.active {
+	transform: rotate(90deg);
 }
