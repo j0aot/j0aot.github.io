@@ -45,12 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// Enhanced form handling with better validation
+	// Formspree endpoint — replace YOUR_FORM_ID with your Formspree form ID
+	// Sign up at https://formspree.io, create a form, and paste your endpoint here.
+	// Example: 'https://formspree.io/f/abcd1234'
+	const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+	// Enhanced form handling with Formspree integration
 	const contactForm = document.getElementById('contactForm');
 	const formMsg = document.getElementById('formMsg');
 
 	if (contactForm) {
-		contactForm.addEventListener('submit', function (e) {
+		contactForm.addEventListener('submit', async function (e) {
 			e.preventDefault();
 
 			const name = this.querySelector('input[name="name"]').value.trim();
@@ -76,6 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				return;
 			}
 
+			// Guard: remind developer to configure Formspree before going live
+			if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+				showFormMessage('Contact form is not configured yet. Please email me directly at 10gabriel.tavares@gmail.com', 'error');
+				return;
+			}
+
 			const button = this.querySelector('button[type="submit"]');
 			const originalButtonText = button.textContent;
 
@@ -83,18 +94,31 @@ document.addEventListener('DOMContentLoaded', () => {
 			button.textContent = 'Sending...';
 			button.classList.add('sending');
 
-			// Simulate form submission with better feedback
-			setTimeout(() => {
-				showFormMessage('Message sent successfully! Thank you for your contact.', 'success');
-				this.reset();
+			try {
+				const response = await fetch(FORMSPREE_ENDPOINT, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+					body: JSON.stringify({ name, email, message }),
+				});
+
+				if (response.ok) {
+					showFormMessage('Message sent successfully! I will get back to you soon.', 'success');
+					this.reset();
+					setTimeout(() => {
+						if (formMsg) formMsg.textContent = '';
+					}, 7000);
+				} else {
+					const data = await response.json().catch(() => ({}));
+					const errMsg = data?.errors?.[0]?.message || 'Something went wrong. Please try again or email me directly.';
+					showFormMessage(errMsg, 'error');
+				}
+			} catch {
+				showFormMessage('Network error. Please check your connection and try again.', 'error');
+			} finally {
 				button.disabled = false;
 				button.textContent = originalButtonText;
 				button.classList.remove('sending');
-
-				setTimeout(() => {
-					if (formMsg) formMsg.textContent = '';
-				}, 7000);
-			}, 2000);
+			}
 		});
 	}
 
