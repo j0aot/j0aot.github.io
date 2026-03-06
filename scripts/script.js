@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-	// Smooth scroll for navigation links
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		anchor.addEventListener('click', function (e) {
 			const targetId = this.getAttribute('href');
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
-	// Mobile nav toggle with improved UX
 	const navToggle = document.getElementById('nav-toggle');
 	const navUl = document.querySelector('nav ul');
 
@@ -23,34 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (navUl) {
 				navUl.classList.toggle('show');
 				this.classList.toggle('active');
+				this.setAttribute('aria-expanded', navUl.classList.contains('show'));
 			}
 		};
 
-		// Close mobile menu when clicking on a link
 		if (navUl) {
 			navUl.addEventListener('click', function (e) {
 				if (e.target.tagName === 'A') {
 					this.classList.remove('show');
 					navToggle.classList.remove('active');
+					navToggle.setAttribute('aria-expanded', 'false');
 				}
 			});
 		}
 
-		// Close mobile menu when clicking outside
 		document.addEventListener('click', function (e) {
-			if (!navToggle.contains(e.target) && !navUl.contains(e.target)) {
+			if (navUl && !navToggle.contains(e.target) && !navUl.contains(e.target)) {
 				navUl.classList.remove('show');
 				navToggle.classList.remove('active');
+				navToggle.setAttribute('aria-expanded', 'false');
 			}
 		});
 	}
 
-	// Formspree endpoint — replace YOUR_FORM_ID with your Formspree form ID
-	// Sign up at https://formspree.io, create a form, and paste your endpoint here.
-	// Example: 'https://formspree.io/f/abcd1234'
-	const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+	const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mreygqkn';
 
-	// Enhanced form handling with Formspree integration
 	const contactForm = document.getElementById('contactForm');
 	const formMsg = document.getElementById('formMsg');
 
@@ -62,26 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			const email = this.querySelector('input[name="email"]').value.trim();
 			const message = this.querySelector('textarea[name="message"]').value.trim();
 
-			// Clear previous messages
 			if (formMsg) formMsg.textContent = '';
 
-			// Enhanced validation
 			if (name.length < 2) {
-				showFormMessage('Please enter a valid name (at least 2 characters)', 'error');
+				showFormMessage('Please enter a valid name (at least 2 characters).', 'error');
 				return;
 			}
 
 			if (!isValidEmail(email)) {
-				showFormMessage('Please enter a valid email address', 'error');
+				showFormMessage('Please enter a valid email address.', 'error');
 				return;
 			}
 
 			if (message.length < 10) {
-				showFormMessage('Please enter a message with at least 10 characters', 'error');
+				showFormMessage('Please enter a message with at least 10 characters.', 'error');
 				return;
 			}
 
-			// Guard: remind developer to configure Formspree before going live
 			if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
 				showFormMessage('Contact form is not configured yet. Please email me directly at 10gabriel.tavares@gmail.com', 'error');
 				return;
@@ -97,7 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			try {
 				const response = await fetch(FORMSPREE_ENDPOINT, {
 					method: 'POST',
-					headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+					headers: {
+						'Content-Type': 'application/json',
+						Accept: 'application/json',
+					},
 					body: JSON.stringify({ name, email, message }),
 				});
 
@@ -122,13 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// Email validation helper function
 	function isValidEmail(email) {
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(email);
 	}
 
-	// Form message helper function
 	function showFormMessage(message, type) {
 		if (formMsg) {
 			formMsg.textContent = message;
@@ -136,14 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	// Enhanced Intersection Observer for scroll animations
 	const revealElements = document.querySelectorAll('.hero h2, .hero p, .hero-buttons, .about-content, .skill-logo-item, .card, .contact-info, #contactForm');
 
 	const revealObserver = new IntersectionObserver(
 		(entries, observer) => {
 			entries.forEach((entry, index) => {
 				if (entry.isIntersecting) {
-					// Add  animation delay for multiple elements
 					setTimeout(() => {
 						entry.target.classList.add('show');
 					}, index * 100);
@@ -157,11 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	);
 
-	revealElements.forEach(el => {
-		revealObserver.observe(el);
-	});
+	revealElements.forEach(el => revealObserver.observe(el));
 
-	// Enhanced active navigation link highlighting on scroll
 	const sections = document.querySelectorAll('section[id]');
 	const navLinks = document.querySelectorAll('header nav ul li a');
 
@@ -183,26 +171,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	// Throttle scroll events for better performance
 	let ticking = false;
+
 	function requestTick() {
 		if (!ticking) {
-			requestAnimationFrame(changeNavOnScroll);
+			requestAnimationFrame(() => {
+				changeNavOnScroll();
+				ticking = false;
+			});
 			ticking = true;
 		}
 	}
 
-	window.addEventListener('scroll', () => {
-		requestTick();
-		ticking = false;
-	});
+	window.addEventListener('scroll', requestTick);
 	changeNavOnScroll();
 
-	// Enhanced theme toggle with localStorage persistence
 	const themeToggle = document.getElementById('theme-toggle');
 	const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-	// Load saved theme or use system preference
 	const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
 
 	if (currentTheme === 'light') {
@@ -212,12 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (themeToggle) {
 		themeToggle.onclick = function () {
 			document.body.classList.toggle('light-theme');
-
-			// Save theme preference
 			const theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
 			localStorage.setItem('theme', theme);
 
-			// Add visual feedback
 			this.style.transform = 'rotate(180deg)';
 			setTimeout(() => {
 				this.style.transform = 'rotate(0deg)';
@@ -225,39 +207,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 	}
 
-	// Skills logo items hover effect enhancement
 	const skillItems = document.querySelectorAll('.skill-logo-item');
 	skillItems.forEach(item => {
 		item.addEventListener('mouseenter', function () {
 			this.style.transform = 'translateY(-5px) scale(1.02)';
 		});
-
 		item.addEventListener('mouseleave', function () {
 			this.style.transform = 'translateY(0) scale(1)';
 		});
 	});
 
-	// Project cards enhanced hover effects
 	const projectCards = document.querySelectorAll('.card');
 	projectCards.forEach(card => {
 		card.addEventListener('mouseenter', function () {
 			this.style.transform = 'translateY(-12px)';
 			const img = this.querySelector('img');
-			if (img) {
-				img.style.transform = 'scale(1.05)';
-			}
+			if (img) img.style.transform = 'scale(1.05)';
 		});
-
 		card.addEventListener('mouseleave', function () {
 			this.style.transform = 'translateY(0)';
 			const img = this.querySelector('img');
-			if (img) {
-				img.style.transform = 'scale(1)';
-			}
+			if (img) img.style.transform = 'scale(1)';
 		});
 	});
 
-	// Add typing effect to hero section
 	const heroTitle = document.querySelector('.hero h2 span');
 	if (heroTitle) {
 		const text = heroTitle.textContent;
@@ -275,10 +248,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		}, 1000);
 	}
 
-	// Add smooth scrolling indicator
 	const scrollIndicator = document.createElement('div');
 	scrollIndicator.className = 'scroll-indicator';
 	scrollIndicator.innerHTML = '<i class="fas fa-chevron-down"></i>';
+	scrollIndicator.setAttribute('aria-hidden', 'true');
 
 	const hero = document.querySelector('.hero');
 	if (hero) {
@@ -291,46 +264,33 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 
-		// Hide scroll indicator when scrolling
 		window.addEventListener('scroll', () => {
-			if (window.scrollY > 100) {
-				scrollIndicator.style.opacity = '0';
-			} else {
-				scrollIndicator.style.opacity = '1';
-			}
+			scrollIndicator.style.opacity = window.scrollY > 100 ? '0' : '1';
 		});
 	}
 
-	// Keyboard navigation support
 	document.addEventListener('keydown', function (e) {
-		// Close mobile menu with Escape key
 		if (e.key === 'Escape' && navUl && navUl.classList.contains('show')) {
 			navUl.classList.remove('show');
-			navToggle.classList.remove('active');
+			if (navToggle) {
+				navToggle.classList.remove('active');
+				navToggle.setAttribute('aria-expanded', 'false');
+			}
 		}
 
-		// Theme toggle with keyboard shortcut (Ctrl/Cmd + Shift + T)
 		if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'T') {
 			e.preventDefault();
-			if (themeToggle) {
-				themeToggle.click();
-			}
+			if (themeToggle) themeToggle.click();
 		}
 	});
 
-	// Preload images for better performance
-	const images = ['./assets/projects/expense.png', './assets/projects/cidades.png', './assets/projects/todo.png'];
-
-	images.forEach(src => {
+	['./assets/projects/expense.png', './assets/projects/cidades.png', './assets/projects/todo.png'].forEach(src => {
 		const img = new Image();
 		img.src = src;
 	});
 
-	// Add loading state management
 	window.addEventListener('load', () => {
 		document.body.classList.add('loaded');
-
-		// Remove any loading indicators
 		const loader = document.querySelector('.loader');
 		if (loader) {
 			loader.style.opacity = '0';
@@ -338,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	//message for developers
 	console.log(`
     🚀 Portfolio by João Tavares
     
