@@ -79,12 +79,10 @@
 				<div class="about-content">
 					<div class="about-text">
 						<p>
-							I'm a passionate web developer with expertise in modern web technologies including HTML, CSS, JavaScript, React, Node.js and MySQL. I specialize in creating efficient, scalable, and
-							user-focused digital solutions.
+							I'm a web developer focused on building clean, functional products. I work across the full stack — from building intuitive interfaces with React to designing scalable APIs with Node.js and databases like MongoDB and MySQL.
 						</p>
 						<p>
-							I thrive on tackling complex challenges and continuously learning new technologies to build performant web applications that deliver exceptional user experiences. My goal is to bridge
-							the gap between design and functionality.
+							I care about the details: performance, accessibility, and code that others can maintain. I'm always looking for the next challenge to solve and the next tool worth learning.
 						</p>
 					</div>
 				</div>
@@ -143,8 +141,7 @@
 						<div class="card-content">
 							<h3>Expense Tracker</h3>
 							<p>
-								Expense Tracker is a web application that allows users to track their expenses and manage their budget effectively. It features user authentication, expense categorization, and data
-								visualization.
+								Managing personal finances without a clear overview leads to overspending. I built a full-stack expense tracker that solves this with real-time budget monitoring, category-based breakdowns, and visual charts. I was responsible for the entire stack — from the React frontend to the Node.js/Express REST API and MongoDB data layer, deployed on Vercel.
 							</p>
 							<div class="skills" role="list" aria-label="Technologies used">
 								<span class="skill-tag" role="listitem">HTML</span>
@@ -155,7 +152,11 @@
 								<span class="skill-tag" role="listitem">MongoDB</span>
 								<span class="skill-tag" role="listitem">Vercel</span>
 							</div>
-					
+							<div class="card-links">
+								<a href="https://github.com/j0aot/expense-tracker" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Expense Tracker source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> GitHub
+								</a>
+							</div>
 						</div>
 					</article>
 
@@ -166,14 +167,21 @@
 						</div>
 						<div class="card-content">
 							<h3>Weather Forecast</h3>
-							<p>A weather application that shows the weather for cities in Portugal over the next 5 days. I used an API from IPMA (Instituto Português do Mar e da Atmosfera).</p>
+							<p>
+								Finding accurate, up-to-date weather data for Portuguese cities in one place was the core problem. I built a React app that consumes the public IPMA (Instituto Português do Mar e da Atmosfera) API to display 5-day forecasts for any city in Portugal. I designed the data-fetching logic, the component architecture, and the responsive UI from scratch.
+							</p>
 							<div class="skills" role="list" aria-label="Technologies used">
 								<span class="skill-tag" role="listitem">HTML</span>
 								<span class="skill-tag" role="listitem">CSS</span>
 								<span class="skill-tag" role="listitem">JavaScript</span>
 								<span class="skill-tag" role="listitem">React</span>
+								<span class="skill-tag" role="listitem">IPMA API</span>
 							</div>
-						
+							<div class="card-links">
+								<a href="https://github.com/j0aot/weather-forecast" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View Weather Forecast source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> GitHub
+								</a>
+							</div>
 						</div>
 					</article>
 
@@ -183,15 +191,21 @@
 							<img src="./assets/projects/todo.png" alt="Todo list application interface with task management features" loading="lazy" />
 						</div>
 						<div class="card-content">
-							<h3>To Do List</h3>
-							<p>It's a to-do list application where you can add, edit, remove or sort each task. Data is persisted using local storage or a backend.</p>
+							<h3>To-Do List</h3>
+							<p>
+								Simple task management tools often lose your data on refresh or lack flexibility. I built a to-do app that persists tasks via localStorage (and optionally a backend), supports inline editing, drag-to-reorder, and bulk operations. I led the full front-end implementation in React, focusing on clean state management and a frictionless UX.
+							</p>
 							<div class="skills" role="list" aria-label="Technologies used">
 								<span class="skill-tag" role="listitem">HTML</span>
 								<span class="skill-tag" role="listitem">CSS</span>
 								<span class="skill-tag" role="listitem">JavaScript</span>
 								<span class="skill-tag" role="listitem">React</span>
+								<span class="skill-tag" role="listitem">localStorage</span>
 							</div>
-						
+							<div class="card-links">
+								<a href="https://github.com/j0aot/todo-list" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="View To-Do List source code on GitHub">
+									<i class="fab fa-github" aria-hidden="true"></i> GitHub
+								</a>
 							</div>
 						</div>
 					</article>
@@ -212,12 +226,13 @@
 							</a>
 						</div>
 					</div>
-					<form id="contactForm" aria-label="Contact form">
-						<input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
-						<input type="email" name="email" placeholder="Your email" required aria-label="Your email address" />
+					<!-- Contact form — to enable email delivery, update FORMSPREE_ENDPOINT in scripts/script.js with your Formspree URL (https://formspree.io) -->
+					<form id="contactForm" aria-label="Contact form" novalidate>
+						<input type="text" name="name" placeholder="Your name" required aria-label="Your name" autocomplete="name" />
+						<input type="email" name="email" placeholder="Your email" required aria-label="Your email address" autocomplete="email" />
 						<textarea name="message" placeholder="Your message" rows="5" required aria-label="Your message"></textarea>
 						<button type="submit" class="btn">Send message</button>
-						<p id="formMsg" aria-live="polite"></p>
+						<p id="formMsg" role="status" aria-live="polite"></p>
 					</form>
 				</div>
 			</section>
