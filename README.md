@@ -1,26 +1,24 @@
-# 🚀 João Tavares — Developer Portfolio
+# João Tavares - Web Developer Portfolio
 
-A personal portfolio website built with vanilla HTML, CSS, and JavaScript.  
-Live at: **[j0aot.github.io](https://j0aot.github.io)**
+A comic book themed personal developer portfolio built with React, Vite, and Pure CSS.
 
----
+## Features
 
-## ✨ Features
+- Comic book aesthetic with pure CSS styling (halftone patterns, solid borders, and retro drop shadows)
+- Smooth navigation through page sections
+- Fully responsive layout for desktop and mobile screens
+- Automated deployment to GitHub Pages via GitHub Actions
 
-- 🌗 **Dark / Light theme** with `localStorage` persistence
-- 📱 **Fully responsive** — mobile, tablet, and desktop
-- ♿ **Accessible** — ARIA labels, skip link, keyboard navigation
-- ✉️ **Contact form** powered by [Formspree](https://formspree.io)
-- ⌨️ **Typing effect** on the hero section
-- ⚡ **Performance optimized** — lazy loading, image preload, rAF throttle
+## Tech Stack
 
----
+- React
+- Vite
+- pnpm
+- Pure CSS
 
-## 🛠️ Tech Stack
+## Featured Projects
 
-| Technology                       | Purpose                            |
-| -------------------------------- | ---------------------------------- |
-| HTML5                            | Semantic structure                 |
-| CSS3                             | Styling, animations, CSS variables |
-| JavaScript (ES6+)                | Interactivity, form handling       |
-| Formspree (https://formspree.io) | Contact form backend               |
+- Cookie-Eater: Browser extension to manage and remove tracking cookies.
+- EverythingPDF: Document processing tool to merge, split, and optimize PDF files.
+- ImageDupe: Hash based deduplication utility to detect duplicate images.
+
