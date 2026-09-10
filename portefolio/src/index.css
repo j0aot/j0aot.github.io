@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Comic Neue', cursive, sans-serif;
+	background-color: #df1f2d;
+	background-image:
+		repeating-radial-gradient(circle at top left, transparent 0, transparent 40px, rgba(0, 0, 0, 0.4) 41px, transparent 42px),
+		repeating-conic-gradient(from 0deg at top left, transparent 0deg, transparent 15deg, rgba(0, 0, 0, 0.4) 16deg, transparent 17deg);
+	background-attachment: fixed;
+	color: #000;
+}
